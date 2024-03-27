@@ -71,12 +71,10 @@ def sidebar_input_features():
     gender = st.sidebar.selectbox("Пол клиента", ("Мужской", "Женский"))
     geo = st.sidebar.selectbox("Страна резидентства", (
     "Франция", "Германия", "Испания"))
-     age = st.sidebar.slider("Возраст клиента", min_value=16, max_value=100, value=1,
+    age = st.sidebar.slider("Возраст клиента", min_value=16, max_value=100, value=1,
                             step=1)
 
-    credit = st.sidebar.slider(
-        "Кредитный скоринг клиента",
-        min_value=0, max_value=1000, value=1, step=1)
+    credit = st.sidebar.slider("Кредитный скоринг клиента",min_value=0, max_value=1000, value=1, step=1)
 
     ten = st.sidebar.slider("Срок обслуживания клиента",
                                min_value=0, max_value=20, value=1, step=1)
@@ -93,8 +91,7 @@ def sidebar_input_features():
         "Германия": "Germany",
         "Испания": "Spain",
        }
-['CreditScore', 'Geography', 'Gender','Age', 'Tenure', 'Balance', 
-      'NumOfProducts', 'EstimatedSalary']
+
     data = {
         "CreditScore": credit,
         "Geography": translatetion[geo],
