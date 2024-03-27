@@ -115,6 +115,6 @@ pred_churn=prediction[:,1]
 pred_churn=int(pred_churn*100)
 
 # вывести предсказание модели
-st.write("## Прогноз ухода клиента из банка:")
+st.write("## Вероятность ухода клиента из банка:")
 st.write(pred_churn, '%')
 
