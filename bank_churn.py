@@ -110,7 +110,7 @@ def sidebar_input_features():
     
 x_test=sidebar_input_features()
 prediction = model_cat.predict_proba(x_test)
-pred_churn=prediction[:,1]*100%
+pred_churn=prediction[:,1]
 
 # вывести предсказание модели
 st.write("## Прогноз вероятности,что клиент уйдет из банка")
