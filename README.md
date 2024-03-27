@@ -20,3 +20,4 @@ Playground Series - Season 4, Episode 1)
 - EstimatedSalary: The estimated salary of the customer - примерная зарплата клиента
 - Exited: Whether the customer has churned (1 = yes, 0 = no) - таргет- клиент покинет банк или нет
 
+Прогноз делает модель Catboost,обученная на этих данных 
