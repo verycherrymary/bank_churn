@@ -80,9 +80,9 @@ def sidebar_input_features():
     ten = st.sidebar.slider("Срок обслуживания клиента",
                                min_value=0, max_value=20, value=1, step=1)
     bal = st.sidebar.slider("Баланс счета клиента",
-                               min_value=0, max_value=500000, value=1000, step=1)
+                               min_value=0, max_value=500000, value=1, step=1)
     sal = st.sidebar.slider("Зарплата клиента",
-                               min_value=0, max_value=5000000, value=1000, step=1)
+                               min_value=0, max_value=500000, value=1, step=1)
     numprod = st.sidebar.slider("Количество сервисов банка у клиента",
                                min_value=0, max_value=10, value=1, step=1)
     translatetion = {
@@ -112,8 +112,9 @@ def sidebar_input_features():
 x_test=sidebar_input_features()
 prediction = model_cat.predict_proba(x_test)
 pred_churn=prediction[:,1]
+pred_churn=int(pred_churn*100)
 
 # вывести предсказание модели
-st.write("## Прогноз вероятности,что клиент уйдет из банка")
-st.write(pred_churn)
+st.write("## Вероятность,что клиент уйдет из банка")
+st.write(pred_churn, '%')
 
