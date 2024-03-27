@@ -67,6 +67,7 @@ st.image(image)
 st.sidebar.header('Введите данные')
 
 # кнопки - слайдеры для ввода данных человека
+# 5 control
 def sidebar_input_features():
     gender = st.sidebar.selectbox("Пол клиента", ("Мужской", "Женский"))
     geo = st.sidebar.selectbox("Страна резидентства", (
