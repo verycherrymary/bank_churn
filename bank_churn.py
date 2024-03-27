@@ -23,7 +23,7 @@ st.set_page_config(
 def load_image(image_path):
     image = Image.open(image_path)
     # обрезка до нужного размера с сохранением пропорций
-    MAX_SIZE = (600, 400)
+    MAX_SIZE = (800,600)
     image.thumbnail(MAX_SIZE)
     return image
 
