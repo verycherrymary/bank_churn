@@ -120,4 +120,4 @@ st.write(pred_churn, '%')
 df = st.cache_data(pd.read_csv)('https://drive.google.com/u/0/uc?id=1212q9ykwlDp1dV5YttD0FdA3ADnJHB6b&export=download')
 st.dataframe(df)
 st.bar_chart(
-   df, x="Age", y=["Gender", "Exited"], color=["#FF0000", "#0000FF"] )
+   df, x="Exited", y=["Gender", "Age"], color=["#FF0000", "#0000FF"] )
