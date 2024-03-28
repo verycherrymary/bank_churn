@@ -120,6 +120,6 @@ st.write(pred_churn, '%')
 df = st.cache_data(pd.read_csv)('https://drive.google.com/u/0/uc?id=1212q9ykwlDp1dV5YttD0FdA3ADnJHB6b&export=download')
 piv=df.groupby(['Exited','Gender', 'Geography']).agg({
                                          'Age': ['median', 'count']}).copy()
-st.write("### Аналитика ухода клиентов из банка по полу,среднему возрасту и стране резидентства:
-             0- клиент остался, 1 - клиент ушел")
+st.write("### Аналитика ухода клиентов из банка по полу,среднему возрасту и стране резидентства:"
+             "0- клиент остался, 1 - клиент ушел")
 st.dataframe(piv)
