@@ -123,4 +123,4 @@ piv=df.groupby(['Exited','Gender', 'Geography']).agg({
 piv.reset_index(inplace=True)
 st.write("### Аналитика ухода клиентов из банка по полу,среднему возрасту и стране резидентства:")
 st.write("0- клиент остался, 1 - клиент ушел")
-st.dataframe(piv(index=False, header=True))
+st.dataframe(piv,index=False)
