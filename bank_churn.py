@@ -118,8 +118,11 @@ pred_churn=int(pred_churn*100)
 st.write("## Вероятность ухода клиента из банка:")
 st.write(pred_churn, '%')
 df = st.cache_data(pd.read_csv)('https://drive.google.com/u/0/uc?id=1212q9ykwlDp1dV5YttD0FdA3ADnJHB6b&export=download')
-st.dataframe(df)
-st.bar_chart(
-   df, x="Exited", y=["Age"])
-st.bar_chart(
-   df, x="Exited", y=["Gender"])
+piv=df.groupby(['Exited']).agg({'Gender':['count'], 'Geography':['count'], 
+                                         'Age': ['median']}).copy()
+
+st.dataframe(piv)
+# st.bar_chart(
+#    df, x="Exited", y=["Age"])
+# st.bar_chart(
+#    df, x="Exited", y=["Gender"])
