@@ -118,9 +118,9 @@ pred_churn=int(pred_churn*100)
 st.write("## Вероятность ухода клиента из банка:")
 st.write(pred_churn, '%')
 df = st.cache_data(pd.read_csv)('https://drive.google.com/u/0/uc?id=1212q9ykwlDp1dV5YttD0FdA3ADnJHB6b&export=download')
-piv=df.groupby(['Exited','Gender', 'Geography']).agg({
+piv=df.groupby(['Exited','Gender', 'Geography']).agg({'NumOfProducts': ['median'],
                                          'Age': ['median', 'count']}).copy()
-#piv.reset_index(inplace=True)
+
 st.write("### Аналитика ухода клиентов из банка по полу,среднему возрасту и стране резидентства:")
 st.write("0- клиент остался, 1 - клиент ушел")
 st.dataframe(piv)
