@@ -117,4 +117,9 @@ pred_churn=int(pred_churn*100)
 # вывести предсказание модели
 st.write("## Вероятность ухода клиента из банка:")
 st.write(pred_churn, '%')
+df = st.cache_data(pd.read_csv)('https://drive.google.com/u/0/uc?id=1212q9ykwlDp1dV5YttD0FdA3ADnJHB6b&export=download')
+# Create distplot with custom bin_size
+fig = px.scatter(df, x='Exited', y='Age', color='Gender')
 
+# Plot!
+st.plotly_chart(fig)
